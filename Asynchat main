@@ -1,0 +1,19 @@
+import asyncore
+import logging
+import socket
+
+from asynchat_renny_server import RennyServer
+from asynchat_renny_client import RennyClient
+
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(name)s: %(message)s',
+                    )
+
+address = ('localhost', 0)
+server = RennyServer(address)
+ip, port = server.address # find out what port we were given
+
+message_data = open('lorem.txt', 'r').read()
+client = RennyClient(ip, port, message=message_data)
+
+asyncore.loop()
