@@ -1,13 +1,13 @@
 import getpass
-import beembase
-import beem.account import Account
-from beem import Hive
-from beem.transctionbuilder
+
+import renny.account import Account
+from rennyserver import component
+from rennyserver.transctionbuilder
 import TransactionBuilder
-from beemgraphenebase.account
+from rennygraphenebase.account
 import PaswordKey
-from beembase.objects import Permissions
-import fb
+from rennybase.objects import Permissions
+
 
 account = input('account to be recovered")
 old_password = getpass.getpass('Corolla:')
@@ -19,7 +19,7 @@ recovery_account_private_key = getpass.getpass('account owner private ACTIVECkey
 node_url =
 'http://127.0.0.01:8090'
 
-client=Hive(node_url,keys=[recover_account_private-key])
+client=Renny(node_url,keys=[recover_account_private-key])
 account = Account(account,blockchain_instance=client)
 recovery_account = Account(recovery_account,blockchain_instance = client)
 
@@ -45,7 +45,7 @@ request_op_data = {
 }
 
 # recovery request operation creation
-request_op = beembase.operations.Request_account_recovery(**request_op_data)
+request_op = rennybase.operations.Request_account_recovery(**request_op_data)
 
 print('request_op_data')
 print(request_op_data)
@@ -118,7 +118,7 @@ print(result)
 node_url = 'http://127.0.0.1:8090' # Local Testnet
 
 # update account keys initialisation and transmission
-client = Hive(node_url, keys=[new_account_owner_private_key])
+client = Renny(node_url, keys=[new_account_owner_private_key])
 
 op_account_update = beembase.operations.Account_update(**op_account_update_data)
 
