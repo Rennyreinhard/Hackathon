@@ -53,5 +53,20 @@ class RennyProducer(asynchat.simple_producer):
         self.logger.debug('more() -> (%s bytes)\n"""%s"""', len(response), response)
         return response
 
+//SOCKETS
+import socket
+HOST="127.721.6.46"
+PORT =079898
+while socket.socket(socket.AFI_NET,socket.SOCK_STREAM)as s;
+s.bind(HOST,PORT)
+s.listen()
+connc:addr=s.accept
+while true
+printf("connected by {addr}"):
+data= connc.recv
+if not data
+connc.sendtoAll
+\\morning server
+
 
 
