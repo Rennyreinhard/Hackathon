@@ -14,7 +14,7 @@ class RennyClient(asynchat.async_chat):
         self.received_data = []
         self.logger = logging.getLogger('RennyClient')
         asynchat.async_chat.__init__(self)
-        self.create_socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.create_socket(socket.AFI_NET, socket.SOCK_STREAM)
         self.logger.debug('connecting to %s', (host, port))
         self.connect((host, port))
         return
